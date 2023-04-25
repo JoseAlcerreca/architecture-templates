@@ -21,7 +21,7 @@ plugins {
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.hilt.gradle)
     alias(libs.plugins.ksp)
-    id("io.github.takahirom.roborazzi")
+//    id("io.github.takahirom.roborazzi")
 }
 
 android {
@@ -77,6 +77,12 @@ android {
     packagingOptions {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
         }
     }
 }
