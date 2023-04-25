@@ -21,6 +21,7 @@ plugins {
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.hilt.gradle)
     alias(libs.plugins.ksp)
+    id("io.github.takahirom.roborazzi")
 }
 
 android {
@@ -117,6 +118,7 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     // Instrumented tests
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    testImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
     // Local tests: jUnit, coroutines, Android runner
@@ -128,4 +130,10 @@ dependencies {
     androidTestImplementation(libs.androidx.test.core)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.runner)
+
+    // Core functions
+    testImplementation("io.github.takahirom.roborazzi:roborazzi:1.2.0-alpha-1")
+    // JUnit rules
+    testImplementation("io.github.takahirom.roborazzi:roborazzi-junit-rule:1.2.0-alpha-1")
+    testImplementation("org.robolectric:robolectric:4.10")
 }
