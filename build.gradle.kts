@@ -17,5 +17,6 @@
 // Root build.gradle.kts
 
 plugins {
+    alias(libs.plugins.android.application) apply false // Needed to avoid roborazzi throwing
     id("io.github.takahirom.roborazzi") version "1.2.0-alpha-1" apply false
 }
